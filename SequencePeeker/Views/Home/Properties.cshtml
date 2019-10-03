@@ -1,0 +1,63 @@
+﻿@model SequencePeeker.Models.PropertiesModel
+
+@{
+    ViewBag.Title = "Properties";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{ Html.RenderPartial("~/Views/Shared/_Menu.cshtml"); }
+
+<h2>Properties</h2>
+
+<table>
+    <tr>
+        <td class="table-left">Package Name: </td>
+        <td>&nbsp;</td> <!-- spacer -->
+        <td>@Html.DisplayFor(m => m.DisplayName)</td>
+    </tr>
+    <tr>
+        <td class="table-left">Description: </td>
+        <td>&nbsp;</td> <!-- spacer -->
+        <td>@Html.DisplayFor(m => m.AppVPackageDescription)</td>
+    </tr>
+    <tr><td colspan="3"><br /></td></tr>
+    <tr>
+        <td class="table-left">Package Version: </td>
+        <td>&nbsp;</td> <!-- spacer -->
+        <td>@Html.DisplayFor(m => m.Version)</td>
+    </tr>
+    <tr>
+        <td class="table-left">Package GUID: </td>
+        <td>&nbsp;</td> <!-- spacer -->
+        <td>@Html.DisplayFor(m => m.PackageId)</td>
+    </tr>
+    <tr>
+        <td class="table-left">Version GUID: </td>
+        <td>&nbsp;</td> <!-- spacer -->
+        <td>@Html.DisplayFor(m => m.VersionId)</td>
+    </tr>
+    <tr>
+        <td class="table-left">Sequenced on: </td>
+        <td>&nbsp;</td> <!-- spacer -->
+        <td>@Html.DisplayFor(m => m.SequencingStationProcessorArchitecture)</td>
+    </tr>
+    <tr><td colspan="3"><br /></td></tr>
+    <tr>
+        <td class="table-left">Full VFS Write Mode:</td>
+        <td>&nbsp;</td> <!-- spacer -->
+        <td>@Html.DisplayFor(m => m.FullVFSWriteMode)</td>
+    </tr>
+    <tr><td colspan="3"><br /></td></tr>
+    <tr>
+        <td class="table-left">Target OSes: </td>
+        <td>&nbsp;</td> <!-- spacer -->
+        <td>
+            @foreach (var item in Model.TargetOSes)
+            {
+                @item <br />
+            }
+        </td>
+    </tr>
+
+</table>
+

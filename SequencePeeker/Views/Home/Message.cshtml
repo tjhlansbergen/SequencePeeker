@@ -1,0 +1,9 @@
+﻿@model SequencePeeker.Models.MessageModel
+
+@{
+    ViewBag.Title = "Message";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p id="message">@Html.DisplayFor(m => m.Message)</p>
+<a href=@Url.Action("Index") role="button">&larr; back</a>

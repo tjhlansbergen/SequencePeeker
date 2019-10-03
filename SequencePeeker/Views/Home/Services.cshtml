@@ -1,0 +1,47 @@
+﻿@model SequencePeeker.Models.ServicesModel
+
+@{
+    ViewBag.Title = "Services";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{ Html.RenderPartial("~/Views/Shared/_Menu.cshtml"); }
+
+<h2>Services</h2>
+
+@if (Model.Services.Count() == 0)
+{
+    <p>This package contains no services.</p>
+}
+
+@foreach (var item in Model.Services)
+{
+    <table>
+        <tr>
+            <td class="table-left">Name:</td>
+            <td>&nbsp;</td> <!-- spacer -->
+            <td>@item.Attributes().SingleOrDefault(a => a.Name.LocalName == "DisplayName").Value</td>
+        </tr>
+        <tr>
+            <td class="table-left">Description:</td>
+            <td>&nbsp;</td> <!-- spacer -->
+            <td>@item.Attributes().SingleOrDefault(a => a.Name.LocalName == "Description").Value</td>
+        </tr>
+        <tr>
+            <td class="table-left">Path:</td>
+            <td>&nbsp;</td> <!-- spacer -->
+            <td>@item.Attributes().SingleOrDefault(a => a.Name.LocalName == "ImagePath").Value</td>
+        </tr>
+        <tr>
+            <td class="table-left">Startup Type:</td>
+            <td>&nbsp;</td> <!-- spacer -->
+            <td>@item.Attributes().SingleOrDefault(a => a.Name.LocalName == "StartType").Value</td>
+        </tr>
+        <tr>
+            <td class="table-left">Object Name:</td>
+            <td>&nbsp;</td> <!-- spacer -->
+            <td>@item.Attributes().SingleOrDefault(a => a.Name.LocalName == "ObjectName").Value</td>
+        </tr>
+    </table>
+    <br /><br />
+}

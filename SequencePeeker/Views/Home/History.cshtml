@@ -1,0 +1,58 @@
+﻿@model SequencePeeker.Models.HistoryModel
+
+@{
+    ViewBag.Title = "History";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{ Html.RenderPartial("~/Views/Shared/_Menu.cshtml"); }
+
+<h2>History</h2>
+
+@if (Model.History.Count() == 0)
+{
+    <p>This package contains no history. (?!)</p> <!-- should never run? -->
+}
+
+
+@foreach (var item in Model.History)
+{
+    <table>
+        <tr>
+            <td class="table-left">Time:</td>
+            <td>&nbsp;</td> <!-- spacer -->
+            <td>@DateTime.Parse(item.Attributes().SingleOrDefault(a => a.Name.LocalName == "Time").Value).ToString()</td>
+        </tr>
+        <tr>
+            <td class="table-left">Package Version:</td>
+            <td>&nbsp;</td> <!-- spacer -->
+            <td>@item.Attributes().SingleOrDefault(a => a.Name.LocalName == "PackageVersion").Value</td>
+        </tr>
+        <tr>
+            <td class="table-left">Sequencer Version:</td>
+            <td>&nbsp;</td> <!-- spacer -->
+            <td>@item.Attributes().SingleOrDefault(a => a.Name.LocalName == "SequencerVersion").Value</td>
+        </tr>
+        <tr>
+            <td class="table-left">User / machine:</td>
+            <td>&nbsp;</td> <!-- spacer -->
+            <td>@item.Attributes().SingleOrDefault(a => a.Name.LocalName == "SequencerUser").Value<text> on </text>@item.Attributes().SingleOrDefault(a => a.Name.LocalName == "SequencingStation").Value<text> (x</text>@item.Attributes().SingleOrDefault(a => a.Name.LocalName == "PackageOSBitness").Value<text>)</text></td>
+        </tr>
+        <tr>
+            <td class="table-left">Sequencer OS:</td>
+            <td>&nbsp;</td> <!-- spacer -->
+            <td>@item.Attributes().SingleOrDefault(a => a.Name.LocalName == "WindowsVersion").Value</td>
+        </tr>
+        <tr>
+            <td class="table-left">Upgrade?</td>
+            <td>&nbsp;</td> <!-- spacer -->
+            <td>@item.Attributes().SingleOrDefault(a => a.Name.LocalName == "InUpgrade").Value</td>
+        </tr>
+        <tr>
+            <td class="table-left">Save mode:</td>
+            <td>&nbsp;</td> <!-- spacer -->
+            <td>@item.Attributes().SingleOrDefault(a => a.Name.LocalName == "SaveMode").Value</td>
+        </tr>
+    </table>
+    <br /><br />
+}

@@ -1,0 +1,11 @@
+﻿18/11/06 - build 0 - project setup and first build
+18/11/06 - build 1 - started versioning
+18/11/08 - build 5 - created site.css for layout and properties model and view
+18/11/09 - build 8 - created messagemodel and view
+18/11/11 - build 12 - started work on DataStore
+18/11/12 - build 17 - Finished DataStore and PackageFile classes
+18/11/15 - build 23 - Created history and files model and view
+18/11/16 - build 24 - Added Registry.dll and started ParseRegDat class
+18/11/19 - build 27 - finished ParseRegDat class and registry model and view
+18/11/21 - build 28 - added shortcuts and services model and view
+18/11/21 - build 33 - Added 'passcode' protection

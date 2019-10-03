@@ -1,0 +1,99 @@
+﻿/*
+/// <summary >
+/// SequencePeeker
+/// Tako Lansbergen
+/// 11-2018
+///
+/// Site-wide CSS
+/// </summary >
+*/
+
+/* Elements */
+
+body {
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    margin-bottom: 2px;
+    font-weight: bolder;
+}
+
+input[type="file"] {
+    width: 100%;
+    max-width: 500px;
+}
+
+td {
+    vertical-align: top;
+    text-align: left;
+} 
+
+/* Classes */
+
+.table-left {
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.header {
+    background-color: midnightblue;
+    color: white;
+    text-align: right;
+    padding: 10px;
+}
+
+.nav {
+    display: flex;
+}
+
+.name {
+    color: limegreen;
+}
+
+a.name {
+    text-decoration: none;
+}
+
+.button {
+    border: none;
+    width: 180px;
+    background-color: cornflowerblue;
+    padding: 6px;
+    margin-right: 10px;
+    vertical-align: bottom;
+}
+
+.backbutton {
+    border: none;
+    width: 30px;
+    background-color: tan;
+    padding: 6px;
+    margin-right: 10px;
+}
+
+
+.buttontext {
+    text-decoration: none;
+    color: White;
+}
+
+.buttontext:active {
+    color: black;
+}
+
+.main {
+    margin: 16px;
+}
+
+/* IDs */
+
+#message {
+    color: orangered;
+}
+
+
+
+

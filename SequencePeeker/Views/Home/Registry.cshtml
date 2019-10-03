@@ -1,0 +1,33 @@
+﻿@model SequencePeeker.Models.RegistryModel
+
+@{
+    ViewBag.Title = "Registry";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{ Html.RenderPartial("~/Views/Shared/_Menu.cshtml"); }
+
+<h2>Registry</h2>
+
+@if (Model.Keys.Count() == 0)
+{
+    <p>This package contains no registry keys.</p>
+}
+
+<table>
+    @foreach (var group in Model.Keys)
+    {
+
+        <tr><td colspan="3"><b>@group.Key</b></td></tr>
+        foreach (var item in group)
+        {
+        <tr>
+            <td>@item.Type</td>
+            <td>@item.Name</td>
+            <td>@item.Data</td>
+        </tr>
+        }
+        <tr><td colspan="3"><br /></td></tr>
+    }
+
+</table>

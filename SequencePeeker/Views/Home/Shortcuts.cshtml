@@ -1,0 +1,43 @@
+﻿@model SequencePeeker.Models.ShortcutsModel
+
+@{
+    ViewBag.Title = "Shortcuts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{ Html.RenderPartial("~/Views/Shared/_Menu.cshtml"); }
+
+<h2>Shortcuts</h2>
+
+@if (Model.Shortcuts.Count() == 0)
+{
+    <p>This package contains no shortcuts.</p>
+}
+
+
+@foreach (var item in Model.Shortcuts)
+{
+    <table>
+        <tr>
+            <td class="table-left">Location:</td>
+            <td>&nbsp;</td> <!-- spacer -->
+            <td>@item.Descendants().SingleOrDefault(a => a.Name.LocalName == "File").Value</td>
+        </tr>
+        <tr>
+            <td class="table-left">Target:</td>
+            <td>&nbsp;</td> <!-- spacer -->
+            <td>@item.Descendants().SingleOrDefault(a => a.Name.LocalName == "Target").Value</td>
+        </tr>
+        <tr>
+            <td class="table-left">Icon:</td>
+            <td>&nbsp;</td> <!-- spacer -->
+            <td>@item.Descendants().SingleOrDefault(a => a.Name.LocalName == "Icon").Value</td>
+        </tr>
+        <tr>
+            <td class="table-left">Working Directory:</td>
+            <td>&nbsp;</td> <!-- spacer -->
+            <td>@item.Descendants().SingleOrDefault(a => a.Name.LocalName == "WorkingDirectory").Value</td>
+        </tr>
+    </table>
+    <br /><br />
+}

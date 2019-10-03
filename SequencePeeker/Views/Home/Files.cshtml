@@ -1,0 +1,20 @@
+﻿@model SequencePeeker.Models.FilesModel
+
+@{
+    ViewBag.Title = "Files";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{ Html.RenderPartial("~/Views/Shared/_Menu.cshtml"); }
+
+<h2>Files</h2>
+
+@if (Model.Files.Count() == 0)
+{
+    <p>This package contains no files.</p>
+}
+
+@foreach (var item in Model.Files)
+{
+    @item <br />
+}

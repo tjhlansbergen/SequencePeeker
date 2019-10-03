@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script>
+    function DisplayProgressMessage() {
+        document.getElementById("label").innerHTML = "Please hang on while your package is being inspected...";
+        document.getElementById("file").style.visibility = "hidden";
+        document.getElementById("submit").style.visibility = "hidden";
+        document.getElementById("passcode").style.visibility = "hidden";
+    };
+</script>
+
+<!-- upload control-->
+
+<p id="label">Select your .appv package file:</p>
+
+<div class="input">
+    @using (Html.BeginForm("Upload", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <input type="file" name="file" id="file" />
+        <br /><br />
+        <input type="text" name="passcode" id="passcode" placeholder="passcode" />
+        <text>&nbsp;</text>
+        <input type="submit" name="submit" id="submit" value="Inspect package" onclick="DisplayProgressMessage()" />
+
+    }
+</div>
+

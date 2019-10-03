@@ -1,0 +1,13 @@
+﻿<div class="name">
+    @Session["name"]
+</div>
+<br />
+<div class="nav">
+    <div class="backbutton"><a class="buttontext" href=@Url.Action("Index") role="button">&larr;</a></div>
+    <div class="button">@Html.ActionLink("Properties", "Properties", null, new { @class = "buttontext" })</div>
+    <div class="button">@Html.ActionLink("Change History", "History", null, new { @class = "buttontext" })</div>
+    <div class="button">@Html.ActionLink("Virtual Registry", "Registry", null, new { @class = "buttontext" })</div>
+    <div class="button">@Html.ActionLink("Package Files", "Files", null, new { @class = "buttontext" })</div>
+    <div class="button">@Html.ActionLink("Virtual Services", "Services", null, new { @class = "buttontext" })</div>
+    <div class="button">@Html.ActionLink("Shortcuts", "Shortcuts", null, new { @class = "buttontext" })</div>
+</div>
